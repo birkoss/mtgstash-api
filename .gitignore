@@ -5,6 +5,7 @@ __pycache__/
 
 db.sqlite3
 secrets.json
+data/
 
 # Apache auto-generated file
 passenger_wsgi.py
