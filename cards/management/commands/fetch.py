@@ -1,3 +1,4 @@
+import json
 import sys
 
 from django.core.management.base import BaseCommand
@@ -30,4 +31,13 @@ class Command(BaseCommand):
         cards = scryfall_api({
             "q": "set:" + set + " lang:" + lang + " unique:prints",
         })
-        print(len(cards))
+        print("Founds " + str(len(cards)) + " card(s)")
+
+        if len(cards) > 0:
+            filename = "data/sets/" + lang + "/" + set + ".json"
+
+            file = open(filename, "w")
+            file.write(json.dumps(cards))
+            file.close()
+
+            print("File saved as " + filename)

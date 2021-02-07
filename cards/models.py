@@ -25,7 +25,8 @@ class Card(TimeStampedModel, UUIDModel, models.Model):
 
 class Face(TimeStampedModel, UUIDModel, models.Model):
     card = models.ForeignKey(Card, blank=False, null=False, related_name="faces", on_delete=models.CASCADE)  # nopep8
-    descriptors = models.TextField(blank=False, null=False, default='')
+    name = models.CharField(max_length=100, blank=False, default="")
+    descriptors = models.TextField(blank=False, null=False, default="")
     illustration_id = models.CharField(max_length=48, default="")
 
 

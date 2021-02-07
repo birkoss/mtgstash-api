@@ -6,5 +6,4 @@ from cards import views as cards_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('import', cards_views.import_set, name='import'),
 ]
